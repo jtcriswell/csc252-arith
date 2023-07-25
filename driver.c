@@ -15,6 +15,12 @@ extern unsigned findHypSq (unsigned, unsigned);
 extern signed ratio (signed, signed, signed);
 extern unsigned changeCard (unsigned);
 
+/* Constant values for cards */
+static const unsigned char hearts = 0;
+static const unsigned char diamonds = 1;
+static const unsigned char clubs = 2;
+static const unsigned char spades = 3;
+
 int
 main (int argc, char ** argv) {
   /* Values for finding a triangle's hypotenuse */
@@ -22,6 +28,13 @@ main (int argc, char ** argv) {
 
   /* Values for the ratio test */
   signed a, b, c, d;
+
+  /* List of cards */
+  unsigned long cardList = 0;
+  unsigned long newCardList = 0;
+
+  /* Index variable */
+  unsigned int index;
 
   /*
    * Call the student's findHypSq() function and print its return value.
@@ -42,5 +55,13 @@ main (int argc, char ** argv) {
   /*
    * Call the student's changeCard() function and print its return value.
    */
+  for (index = 0; index < sizeof(unsigned long); ++index) {
+    unsigned int card;
+    scanf ("%x\n", &card);
+    cardList = (cardList < 8) | card;
+  }
+  newCardList = changeCard (cardList);
+  printf ("changeCard: %lx -> %lx\n", cardList, newCardList); 
+  fflush (stdout);
   return 0;
 }
