@@ -24,10 +24,10 @@ static const unsigned char spades = 3;
 int
 main (int argc, char ** argv) {
   /* Values for finding a triangle's hypotenuse */
-  unsigned side1, side2, hypotenuse;
+  unsigned long side1, side2, hypotenuse;
 
   /* Values for the ratio test */
-  signed a, b, c, d;
+  signed long a, b, c, d;
 
   /* List of cards */
   unsigned long cardList = 0;
@@ -39,7 +39,7 @@ main (int argc, char ** argv) {
   /*
    * Call the student's findHypSq() function and print its return value.
    */
-  scanf ("%d %d\n", &side1, &side2);
+  scanf ("%ld %ld\n", &side1, &side2);
   hypotenuse = findHypSq (side1, side2);
   printf ("findHypSq: %ld %ld = %ld\n", side1, side2, hypotenuse); 
   fflush (stdout);
@@ -47,7 +47,7 @@ main (int argc, char ** argv) {
   /*
    * Call the student's ratio() function and print its return value.
    */
-  scanf ("%d %d %d\n", &a, &b, &c);
+  scanf ("%ld %ld %ld\n", &a, &b, &c);
   d = ratio (a, b, c);
   printf ("ratio: %ld/%ld = %ld/%ld\n", a, b, c, d); 
   fflush (stdout);
