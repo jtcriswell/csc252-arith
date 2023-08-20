@@ -11,9 +11,9 @@
 #include <stdlib.h>
 
 /* Function prototypes for student code */
-extern unsigned findHypSq (unsigned, unsigned);
-extern signed ratio (signed, signed, signed);
-extern unsigned changeCard (unsigned);
+extern unsigned long findHypSq (unsigned long, unsigned long);
+extern signed long ratio (signed long, signed long, signed long);
+extern unsigned long changeCard (unsigned long);
 
 /* Constant values for cards */
 static const unsigned char hearts = 0;
